@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meleah's Sport Bet Calculator</title>
+    
+      <style>
+        #window {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          font-family: 'Tenor Sans', sans-serif;
+        }
+        caption {
+          font-size: 25px;
+        }
+        td {        
+          border: 2px solid black; 
+          padding: 10px 20px;
+        }
+        thead { 
+          background-color: #991e93; 
+          color: black;  
+        }
+        thead tr:nth-of-type(1) td:nth-of-type(1) { 
+          text-align: right;
+          color: yellow;
+        }
+        thead tr:nth-of-type(2) td:nth-of-type(1) { 
+          text-align: right;
+          color:yellow;
+        }
+        tfoot td:nth-of-type(1) { 
+          text-align: right; 
+          color: white;
+          background-color: black;
+        }
+        tfoot { 
+          text-align: center; 
+          color: white;
+          background-color: black;
+        }
+        input { 
+          font-size: 20px; 
+          text-align: center; 
+          direction: ltr; 
+          width:100px;
+          background: white;
+          font-family: 'Tenor Sans', sans-serif;
+        }
+      </style>
+
+    <script>
+      function betcalculate() {
+        var betamount = document.getElementById('betAmount').value;
+        var odds = document.getElementById('odds').value;
+        document.getElementById("money").innerHTML = betamount * odds;
+      }
+
+    </script>
+</head>
+
+<body>
+      <div id="window">  
+          <table>
+            <caption>Sports Bet Calculator</caption>
+          <thead>
+            <tr>
+              <td>Bet Amount :</td>
+              <td><input type="number1" step="1" value="0" id="betAmount" min="0"></td>
+            </tr>
+            <tr>
+            <td>Odds :</td>  
+            <td><input type="number2" step="10" value="0" id="odds"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <input type="button" onClick="betcalculate()" value="Payout">
+              </td>
+              <td colspan="1"> $ 
+                <span id="money"></span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        </div>
+
+</body>
+</html>
